@@ -16,10 +16,22 @@
 
 @import "bootstrap";
 
+
+
+body {
+  color: #333333;
+  font-family: 'Fjalla', helvetica;
+}
+
  .user-info {
    margin-top: 9px;
  }
  
  .nav {
    margin-top: 5px;
+ }
+
+ .jumbotron {
+  background: url('http://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Stack_of_Copy_Paper.jpg/2560px-Stack_of_Copy_Paper.jpg');
+  background-size: cover;
  }
