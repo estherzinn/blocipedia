@@ -26,8 +26,9 @@ h1 {
  }
 
 body {
-  color: #FFFFFF;
   font-family: "Aleo";
+  background: url('http://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Stack_of_Copy_Paper.jpg/2560px-Stack_of_Copy_Paper.jpg');
+  background-size: cover;
 }
 
  .user-info {
@@ -39,6 +40,5 @@ body {
  }
 
  .jumbotron {
-  background: url('http://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Stack_of_Copy_Paper.jpg/2560px-Stack_of_Copy_Paper.jpg');
-  background-size: cover;
+  
  }
