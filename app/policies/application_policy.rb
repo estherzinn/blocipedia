@@ -38,13 +38,7 @@ class ApplicationPolicy
     record.class
   end
 
-  def premium?
-    update?
-  end
-
-
-
-  class Scope
+class Scope
     attr_reader :user, :scope
 
     def initialize(user, scope)
