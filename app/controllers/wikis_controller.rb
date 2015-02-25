@@ -32,6 +32,7 @@ class WikisController < ApplicationController
     @wiki = Wiki.find(params[:id])
       authorize @wiki
     @collaborator = Collaborator.new
+    @users = User.all
   end
 
   def update
@@ -45,5 +46,6 @@ class WikisController < ApplicationController
        render :edit
      end
    end
+
 
 end
