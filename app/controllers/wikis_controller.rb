@@ -1,22 +1,23 @@
 class WikisController < ApplicationController
   def index
-    @wikis = Wiki.visible_to(current_user).paginate(page: params[:page], per_page: 10)
-      authorize @wikis
+    @wikis = policy_scope(Wiki)
   end
 
   def show
     @wiki = Wiki.find(params[:id])
-      authorize @wikis
+      authorize @wiki
   end
 
   def new
     @wiki = Wiki.new
       authorize @wiki
+    @collaborator = Collaborator.new
   end
 
   def create
     @wiki = Wiki.new(params.require(:wiki).permit(:title, :body))
-      authorize @wiki
+    @wiki.user = current_user
+    authorize @wiki
     if @wiki.save
       flash[:notice] = "Wiki was saved."
       redirect_to @wiki
@@ -24,11 +25,13 @@ class WikisController < ApplicationController
       flash[:error] = "There was an error saving the post. Please try again."
       render :new
     end
+
   end  
 
   def edit
     @wiki = Wiki.find(params[:id])
       authorize @wiki
+    @collaborator = Collaborator.new
   end
 
   def update

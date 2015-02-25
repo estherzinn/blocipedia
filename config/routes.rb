@@ -5,8 +5,14 @@ Rails.application.routes.draw do
   
   get 'about' => 'welcome#about'
 
+
+
   root to: 'welcome#index'
-  resources :wikis
+  
+  resources :wikis do 
+    resources :collaborators, only: [:create, :destroy]
+    
+  end
 
   resources :charges, only: [:new, :create]
 
