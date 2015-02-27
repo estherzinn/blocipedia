@@ -3,12 +3,8 @@
   <h4>Wiki Collaborators</h4>
   <% @users.each do |user| %>
     <p>
-    <%= check_box_tag "wiki[collaborator_ids][]", user.id %>
+    <%= check_box_tag "wiki[collaborators_attributes][][user_attributes][id]", user.id, wiki.collaborators.detect {| c | c.user == user}.present? %>
       <%= user.email %>
-      <!-- delete collaborator option only available to creator -->
-      <% if @wiki.user == current_user %>
-        <%= link_to "", wiki_collaborator_path(@wiki, collaborator), method: :delete, class: 'glyphicon glyphicon-ok' %>
-      <% end %>
     </p>
   <% end %>
 </div>
