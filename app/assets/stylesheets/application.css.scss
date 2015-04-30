@@ -27,9 +27,15 @@ h1 {
 
 body {
   font-family: "Aleo";
-  background: url('http://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Stack_of_Copy_Paper.jpg/2560px-Stack_of_Copy_Paper.jpg');
+  background: url('http://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Stack_of_Copy_Paper.jpg/2560px-Stack_of_Copy_Paper.jpg') no-repeat center center fixed;
+  background-size: cover;
+   -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
 }
+
+
 
  .user-info {
    margin-top: 9px;
